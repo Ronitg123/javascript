@@ -1,0 +1,112 @@
+// function Decleration
+function mySum(number1, number2) {
+    console.log(number1+ number2);   
+}
+mySum(5, 10);
+
+
+// Function expression
+let multiply = function(a, b) {
+    return a * b;
+};
+console.log(multiply(5, 5));
+
+
+// Arrow Function
+
+const subtract = (a, b) => a - b;
+console.log(subtract(5, 5));
+
+// Default Parameter
+function greet(name = 'Guest') {
+    return `Hello, ${name}!`;
+}
+console.log(greet()); // Hello, Guest!
+console.log(greet('Alice')); // Hello, Alice!  ())
+
+// rest parameter 
+
+function sum(...numbers) {
+   let total = 0;
+   for (let number of numbers) {
+    total += number;
+    }
+    return total;
+    }
+    console.log(sum(1, 2, 3, 4, 5));
+
+    // destructured parameter
+
+    
+function getFullName({ firstName, lastName }) {
+    return `${firstName} ${lastName}`;
+}
+
+const user = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30
+};
+
+console.log(getFullName(user));
+
+// function naming conventions
+
+function mySum(a, b){
+    return a + b;
+}
+function printValue(){
+    console.log(mySum(2, 3));
+}
+printValue();
+
+    //pure function
+    
+function cube(a){
+    return a * a * a;
+}
+console.log(cube(2));
+
+
+// higher order
+
+
+function applyOperation(a, b, operation) {
+    return operation(a, b);
+}
+
+const sub = (x, y) => x - y;
+
+console.log(applyOperation(4, 3, sub));
+
+
+// error handling
+
+
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error('Division by zero is not allowed.');
+    }
+    return a / b;
+}
+
+try {
+    console.log(divide(4, 2));
+    console.log(divide(4, 0));
+} catch (error) {
+    console.error(error.message);
+}           
+    
+    //Documentation and Comments
+
+
+/**
+* Adds two numbers together.
+* 
+* @param {number} a - The first number.
+* @param {number} b - The second number.
+* @returns {number} The sum of the two numbers.
+*/
+function add(a, b) {
+    return a + b;
+}
